@@ -559,8 +559,7 @@ typedef struct
   __IO  uint32_t                       EIC_INTENSET;       /* Offset: 0x10 (R/W  32) Interrupt Enable Set */
   __IO  uint32_t                       EIC_INTFLAG;        /* Offset: 0x14 (R/W  32) Interrupt Flag Status and Clear */
   __IO  uint32_t                       EIC_ASYNCH;         /* Offset: 0x18 (R/W  32) External Interrupt Asynchronous Mode */
-  __IO  uint32_t                       EIC_CONFIG0;        /* Offset: 0x1C (R/W  32) External Interrupt Sense Configuration */
-  __IO  uint32_t                       EIC_CONFIG1;        /* Offset: 0x20 (R/W  32) External Interrupt Sense Configuration */
+  __IO  uint32_t                       EIC_CONFIG[2];      /* Offset: 0x1C (R/W  32) External Interrupt Sense Configuration */
   __I   uint8_t                        Reserved1[0x0C];
   __IO  uint32_t                       EIC_DEBOUNCEN;      /* Offset: 0x30 (R/W  32) Debouncer Enable */
   __IO  uint32_t                       EIC_DPRESCALER;     /* Offset: 0x34 (R/W  32) Debouncer Prescaler */
