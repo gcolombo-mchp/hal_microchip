@@ -19,9 +19,11 @@
  *
  */
 
-/*  file generated from device description file (ATDF) version 2025-04-07T17:07:52Z  */
-#ifndef _PIC32CKGC01_EIC_COMPONENT_H_
-#define _PIC32CKGC01_EIC_COMPONENT_H_
+/*  file generated from device description file (ATDF) version 2025-07-03T22:18:59Z  */
+#ifndef _PIC32CKSG00_EIC_COMPONENT_H_
+#define _PIC32CKSG00_EIC_COMPONENT_H_
+
+#include "core_cm33.h"
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR EIC                       */
@@ -113,7 +115,10 @@
 #define EIC_INTENCLR_EXTINT_Pos               _UINT32_(0)                                          /* (EIC_INTENCLR) External Interrupt Enable Position */
 #define EIC_INTENCLR_EXTINT_Msk               (_UINT32_(0xFFFF) << EIC_INTENCLR_EXTINT_Pos)        /* (EIC_INTENCLR) External Interrupt Enable Mask */
 #define EIC_INTENCLR_EXTINT(value)            (EIC_INTENCLR_EXTINT_Msk & (_UINT32_(value) << EIC_INTENCLR_EXTINT_Pos)) /* Assignment of value for EXTINT in the EIC_INTENCLR register */
-#define EIC_INTENCLR_Msk                      _UINT32_(0x0000FFFF)                                 /* (EIC_INTENCLR) Register Mask  */
+#define EIC_INTENCLR_NSCHK_Pos                _UINT32_(31)                                         /* (EIC_INTENCLR) Non-secure Check Interrupt Enable Position */
+#define EIC_INTENCLR_NSCHK_Msk                (_UINT32_(0x1) << EIC_INTENCLR_NSCHK_Pos)            /* (EIC_INTENCLR) Non-secure Check Interrupt Enable Mask */
+#define EIC_INTENCLR_NSCHK(value)             (EIC_INTENCLR_NSCHK_Msk & (_UINT32_(value) << EIC_INTENCLR_NSCHK_Pos)) /* Assignment of value for NSCHK in the EIC_INTENCLR register */
+#define EIC_INTENCLR_Msk                      _UINT32_(0x8000FFFF)                                 /* (EIC_INTENCLR) Register Mask  */
 
 
 /* -------- EIC_INTENSET : (EIC Offset: 0x10) (R/W 32) Interrupt Enable Set -------- */
@@ -122,7 +127,10 @@
 #define EIC_INTENSET_EXTINT_Pos               _UINT32_(0)                                          /* (EIC_INTENSET) External Interrupt Enable Position */
 #define EIC_INTENSET_EXTINT_Msk               (_UINT32_(0xFFFF) << EIC_INTENSET_EXTINT_Pos)        /* (EIC_INTENSET) External Interrupt Enable Mask */
 #define EIC_INTENSET_EXTINT(value)            (EIC_INTENSET_EXTINT_Msk & (_UINT32_(value) << EIC_INTENSET_EXTINT_Pos)) /* Assignment of value for EXTINT in the EIC_INTENSET register */
-#define EIC_INTENSET_Msk                      _UINT32_(0x0000FFFF)                                 /* (EIC_INTENSET) Register Mask  */
+#define EIC_INTENSET_NSCHK_Pos                _UINT32_(31)                                         /* (EIC_INTENSET) Non-secure Check Interrupt Enable Position */
+#define EIC_INTENSET_NSCHK_Msk                (_UINT32_(0x1) << EIC_INTENSET_NSCHK_Pos)            /* (EIC_INTENSET) Non-secure Check Interrupt Enable Mask */
+#define EIC_INTENSET_NSCHK(value)             (EIC_INTENSET_NSCHK_Msk & (_UINT32_(value) << EIC_INTENSET_NSCHK_Pos)) /* Assignment of value for NSCHK in the EIC_INTENSET register */
+#define EIC_INTENSET_Msk                      _UINT32_(0x8000FFFF)                                 /* (EIC_INTENSET) Register Mask  */
 
 
 /* -------- EIC_INTFLAG : (EIC Offset: 0x14) (R/W 32) Interrupt Flag Status and Clear -------- */
@@ -131,7 +139,10 @@
 #define EIC_INTFLAG_EXTINT_Pos                _UINT32_(0)                                          /* (EIC_INTFLAG) External Interrupt Position */
 #define EIC_INTFLAG_EXTINT_Msk                (_UINT32_(0xFFFF) << EIC_INTFLAG_EXTINT_Pos)         /* (EIC_INTFLAG) External Interrupt Mask */
 #define EIC_INTFLAG_EXTINT(value)             (EIC_INTFLAG_EXTINT_Msk & (_UINT32_(value) << EIC_INTFLAG_EXTINT_Pos)) /* Assignment of value for EXTINT in the EIC_INTFLAG register */
-#define EIC_INTFLAG_Msk                       _UINT32_(0x0000FFFF)                                 /* (EIC_INTFLAG) Register Mask  */
+#define EIC_INTFLAG_NSCHK_Pos                 _UINT32_(31)                                         /* (EIC_INTFLAG) Non-secure Check Interrupt Position */
+#define EIC_INTFLAG_NSCHK_Msk                 (_UINT32_(0x1) << EIC_INTFLAG_NSCHK_Pos)             /* (EIC_INTFLAG) Non-secure Check Interrupt Mask */
+#define EIC_INTFLAG_NSCHK(value)              (EIC_INTFLAG_NSCHK_Msk & (_UINT32_(value) << EIC_INTFLAG_NSCHK_Pos)) /* Assignment of value for NSCHK in the EIC_INTFLAG register */
+#define EIC_INTFLAG_Msk                       _UINT32_(0x8000FFFF)                                 /* (EIC_INTFLAG) Register Mask  */
 
 
 /* -------- EIC_ASYNCH : (EIC Offset: 0x18) (R/W 32) External Interrupt Asynchronous Mode -------- */
@@ -530,6 +541,30 @@
 #define EIC_PINSTATE_Msk                      _UINT32_(0x0000FFFF)                                 /* (EIC_PINSTATE) Register Mask  */
 
 
+/* -------- EIC_NSCHK : (EIC Offset: 0x3C) (R/W 32) Non-secure Interrupt Check Enable -------- */
+#define EIC_NSCHK_RESETVALUE                  _UINT32_(0x00)                                       /*  (EIC_NSCHK) Non-secure Interrupt Check Enable  Reset Value */
+
+#define EIC_NSCHK_EXTINT_Pos                  _UINT32_(0)                                          /* (EIC_NSCHK) External Interrupt Nonsecure Check Enable Position */
+#define EIC_NSCHK_EXTINT_Msk                  (_UINT32_(0xFFFF) << EIC_NSCHK_EXTINT_Pos)           /* (EIC_NSCHK) External Interrupt Nonsecure Check Enable Mask */
+#define EIC_NSCHK_EXTINT(value)               (EIC_NSCHK_EXTINT_Msk & (_UINT32_(value) << EIC_NSCHK_EXTINT_Pos)) /* Assignment of value for EXTINT in the EIC_NSCHK register */
+#define EIC_NSCHK_NMI_Pos                     _UINT32_(31)                                         /* (EIC_NSCHK) Non-Maskable External Interrupt Nonsecure Check Enable Position */
+#define EIC_NSCHK_NMI_Msk                     (_UINT32_(0x1) << EIC_NSCHK_NMI_Pos)                 /* (EIC_NSCHK) Non-Maskable External Interrupt Nonsecure Check Enable Mask */
+#define EIC_NSCHK_NMI(value)                  (EIC_NSCHK_NMI_Msk & (_UINT32_(value) << EIC_NSCHK_NMI_Pos)) /* Assignment of value for NMI in the EIC_NSCHK register */
+#define EIC_NSCHK_Msk                         _UINT32_(0x8000FFFF)                                 /* (EIC_NSCHK) Register Mask  */
+
+
+/* -------- EIC_NONSEC : (EIC Offset: 0x40) (R/W 32) Non-secure Interrupt -------- */
+#define EIC_NONSEC_RESETVALUE                 _UINT32_(0x00)                                       /*  (EIC_NONSEC) Non-secure Interrupt  Reset Value */
+
+#define EIC_NONSEC_EXTINT_Pos                 _UINT32_(0)                                          /* (EIC_NONSEC) External Interrupt Nonsecure Enable Position */
+#define EIC_NONSEC_EXTINT_Msk                 (_UINT32_(0xFFFF) << EIC_NONSEC_EXTINT_Pos)          /* (EIC_NONSEC) External Interrupt Nonsecure Enable Mask */
+#define EIC_NONSEC_EXTINT(value)              (EIC_NONSEC_EXTINT_Msk & (_UINT32_(value) << EIC_NONSEC_EXTINT_Pos)) /* Assignment of value for EXTINT in the EIC_NONSEC register */
+#define EIC_NONSEC_NMI_Pos                    _UINT32_(31)                                         /* (EIC_NONSEC) Non-Maskable Interrupt Nonsecure Enable Position */
+#define EIC_NONSEC_NMI_Msk                    (_UINT32_(0x1) << EIC_NONSEC_NMI_Pos)                /* (EIC_NONSEC) Non-Maskable Interrupt Nonsecure Enable Mask */
+#define EIC_NONSEC_NMI(value)                 (EIC_NONSEC_NMI_Msk & (_UINT32_(value) << EIC_NONSEC_NMI_Pos)) /* Assignment of value for NMI in the EIC_NONSEC register */
+#define EIC_NONSEC_Msk                        _UINT32_(0x8000FFFF)                                 /* (EIC_NONSEC) Register Mask  */
+
+
 /* EIC register offsets definitions */
 #define EIC_CTRLA_REG_OFST             _UINT32_(0x00)      /* (EIC_CTRLA) Control A Offset */
 #define EIC_NMICTRL_REG_OFST           _UINT32_(0x01)      /* (EIC_NMICTRL) Non-Maskable Interrupt Control Offset */
@@ -545,6 +580,8 @@
 #define EIC_DEBOUNCEN_REG_OFST         _UINT32_(0x30)      /* (EIC_DEBOUNCEN) Debouncer Enable Offset */
 #define EIC_DPRESCALER_REG_OFST        _UINT32_(0x34)      /* (EIC_DPRESCALER) Debouncer Prescaler Offset */
 #define EIC_PINSTATE_REG_OFST          _UINT32_(0x38)      /* (EIC_PINSTATE) Pin State Offset */
+#define EIC_NSCHK_REG_OFST             _UINT32_(0x3C)      /* (EIC_NSCHK) Non-secure Interrupt Check Enable Offset */
+#define EIC_NONSEC_REG_OFST            _UINT32_(0x40)      /* (EIC_NONSEC) Non-secure Interrupt Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /* EIC register API structure */
@@ -559,13 +596,16 @@ typedef struct
   __IO  uint32_t                       EIC_INTENSET;       /* Offset: 0x10 (R/W  32) Interrupt Enable Set */
   __IO  uint32_t                       EIC_INTFLAG;        /* Offset: 0x14 (R/W  32) Interrupt Flag Status and Clear */
   __IO  uint32_t                       EIC_ASYNCH;         /* Offset: 0x18 (R/W  32) External Interrupt Asynchronous Mode */
-  __IO  uint32_t                       EIC_CONFIG[2];      /* Offset: 0x1C (R/W  32) External Interrupt Sense Configuration */
+  __IO  uint32_t                       EIC_CONFIG0;        /* Offset: 0x1C (R/W  32) External Interrupt Sense Configuration */
+  __IO  uint32_t                       EIC_CONFIG1;        /* Offset: 0x20 (R/W  32) External Interrupt Sense Configuration */
   __I   uint8_t                        Reserved1[0x0C];
   __IO  uint32_t                       EIC_DEBOUNCEN;      /* Offset: 0x30 (R/W  32) Debouncer Enable */
   __IO  uint32_t                       EIC_DPRESCALER;     /* Offset: 0x34 (R/W  32) Debouncer Prescaler */
   __I   uint32_t                       EIC_PINSTATE;       /* Offset: 0x38 (R/   32) Pin State */
+  __IO  uint32_t                       EIC_NSCHK;          /* Offset: 0x3C (R/W  32) Non-secure Interrupt Check Enable */
+  __IO  uint32_t                       EIC_NONSEC;         /* Offset: 0x40 (R/W  32) Non-secure Interrupt */
 } eic_registers_t;
 
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-#endif /* _PIC32CKGC01_EIC_COMPONENT_H_ */
+#endif /* _PIC32CKSG00_EIC_COMPONENT_H_ */
